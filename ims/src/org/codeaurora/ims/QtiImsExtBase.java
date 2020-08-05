@@ -165,6 +165,11 @@ public abstract class QtiImsExtBase {
             onSetCallBarring(phoneId, operationType, facilityType, cbNumListInfo, password,
                     serviceClass, listener);
         }
+
+        @Override
+        public boolean isCallComposerEnabled(int phoneId) {
+            return onIsCallComposerEnabled(phoneId);
+        }
     };
 
     private QtiImsExtBinder mQtiImsExtBinder;
@@ -265,5 +270,9 @@ public abstract class QtiImsExtBase {
             String[] cbNumListInfo, String password, int serviceClass,
             IQtiImsExtListener listener) {
         // no-op
+    }
+    protected boolean onIsCallComposerEnabled(int phoneId) {
+        // no-op
+        return false;
     }
 }

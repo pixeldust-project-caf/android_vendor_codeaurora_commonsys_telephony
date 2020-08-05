@@ -1,4 +1,4 @@
-/* Copyright (c) 2015, 2019 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015, 2019-2020 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -329,7 +329,6 @@ public class QtiCallConstants {
     public static final int AUTO_REJECT_CALL_ENABLED = 1;
     // Auto reject call UI item, avoid conflicting values from ImsCallUtils.ConfigItem
     public static final int AUTO_REJECT_CALL_MODE = 1000;
-
     /**
      * Constants used by clients as part of registration status change indication.
      * Below constants will be notified when modem is unable to get the geo location information.
@@ -344,5 +343,62 @@ public class QtiCallConstants {
     public static final int REG_ERROR_GEO_LOCATION_STATUS_ENGINE_LOCK = 2002;
     // This is success case, received when all the GPS errors are resolved.
     public static final int REG_ERROR_GEO_LOCATION_STATUS_RESOLVED = 2003;
+
+    public static final int CALL_COMPOSER_MODE = 1004;
+
+    /**
+     * Key values for the Call Composer elements
+     */
+    // Intent action broadcasted when call composer elements are available for MT
+    public static final String ACTION_CALL_COMPOSER_INFO =
+            "org.codeaurora.intent.action.CALL_COMPOSER_INFO";
+    // set for MT call composer call (unique ID to match each call)
+    // Type: String
+    public static String EXTRA_CALL_COMPOSER_TOKEN = "call_composer_token";
+
+    // set for MT call composer call (only set when the call has ended)
+    // Type: boolean
+    public static String EXTRA_CALL_COMPOSER_CALL_ENDED = "call_composer_call_ended";
+
+    // set for call composer call
+    public static String EXTRA_CALL_COMPOSER_INFO = "call_composer_info";
+
+    // set when subject is added to call composer call
+    // Type: String
+    public static final String EXTRA_CALL_COMPOSER_SUBJECT = "call_composer_subject";
+
+    // set when priority is added to call composer call
+    // Type: int (0 for urgent, 1 for normal)
+    public static String EXTRA_CALL_COMPOSER_PRIORITY = "call_composer_priority";
+
+    // set when image url is added to call composer call
+    // Type: parcelable Uri
+    public static String EXTRA_CALL_COMPOSER_IMAGE = "call_composer_image";
+
+    // set when location is added to call composer call
+    // Type: boolean
+    public static String EXTRA_CALL_COMPOSER_LOCATION = "call_composer_location";
+
+    // set for circle location
+    // Type: float
+    public static String EXTRA_CALL_COMPOSER_LOCATION_RADIUS = "call_composer_location_radius";
+
+    // latitude of the location for the call composer call
+    // Type: double
+    public static String EXTRA_CALL_COMPOSER_LOCATION_LATITUDE = "call_composer_location_latitude";
+
+    // longitude of the location for the call composer call
+    // Type: double
+    public static String EXTRA_CALL_COMPOSER_LOCATION_LONGITUDE =
+            "call_composer_location_longitude";
+
+    /**
+     * User setting to control whether dialing call composer calls are allowed
+     * Type: int (0 for disable, 1 for enabled);
+     */
+    public static final String IMS_CALL_COMPOSER = "qti.settings.call_composer";
+    public static final int CALL_COMPOSER_DISABLED = 0;
+    public static final int CALL_COMPOSER_ENABLED = 1;
+
 }
 
