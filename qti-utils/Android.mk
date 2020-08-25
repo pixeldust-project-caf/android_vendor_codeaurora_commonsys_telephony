@@ -1,3 +1,5 @@
+ifneq ($(TARGET_NO_TELEPHONY), true)
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -31,3 +33,5 @@ include $(BUILD_PREBUILT)
 # Include subdirectory makefiles
 # ============================================================
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
+endif # TARGET_NO_TELEPHONY
